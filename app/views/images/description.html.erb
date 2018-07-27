@@ -1,0 +1,43 @@
+
+<div class="panel panel-default no-border" style="margin-top: 90px; margin-bottom: 90px;">
+	<div class="panel-heading border-radius-10">
+			<h1> Location : <%=@location%> </h1>
+	</div>
+</div>
+
+<div id="description">
+	<div >
+		<h1>Description : </h1>
+		<p></p>
+	</div>
+</div>
+
+
+<%= form_tag('/images/searchhotels', multipart: true) do %>
+<div class="templatemo-login-form">
+<div class="form-row">
+    <div class="col">
+    	<div class='input-group date' id='datetimepicker1' style="display: flex; align-items: center;">
+               <p id="dates"><%= label_tag "Start Date" %></p>
+		       <%= date_field_tag :start_date, as: :date, class: "input-group-addon glyphicon glyphicon-calendar"%>
+         </div>   
+    </div>
+
+    <%= hidden_field_tag(:latitude, @lat) %>
+    <%= hidden_field_tag(:longitude, @long) %>
+    <%= hidden_field_tag(:location, @location) %>
+    <div class="col">
+    	<div class='input-group date' id='datetimepicker1' style="display: flex; align-items: center;">
+               <p id="dates"><%= label_tag "End Date"%></p>
+		       <%= date_field_tag :end_date, as: :date, class: "input-group-addon glyphicon glyphicon-calendar" %>
+         </div> 
+  </div>
+</div>
+</div>
+
+<div class="form-group" style="margin-top: 20px;"> <%= submit_tag "Search Hotels" , class: "templatemo-blue-button width-100"%> </div>
+
+
+<% end %>
+
+

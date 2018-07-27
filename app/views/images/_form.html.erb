@@ -1,0 +1,11 @@
+<div>
+<%= form_tag('/images/uploadimage', multipart: true) do %>
+    
+       <div class="form-group">
+        <%= file_field_tag :image%>
+      </div>
+
+      <div class="form-group"><%= submit_tag "Upload" , class: "templatemo-blue-button width-100"%></div>
+
+<% end %>
+</div>

@@ -1,0 +1,24 @@
+<div class="d-flex flex-column">
+	<% @hotels.each do |hotel|%>
+
+	<div class="p-2 d-flex flex-row templatemo-content-widget">
+		<div class="p-2 flex-column" style="width: 50%;">
+			<ul class="p-2">
+				<li> <strong>Name : </strong> <%= hotel.name %></li>
+				<li> <strong>Address :</strong> <%= hotel.address %></li>
+				<li> <strong>Rating :</strong> <%= hotel.rating %></li>
+				<li> <strong>Distance:</strong> <%= hotel.distance %></li>
+			</ul>
+		</div>
+
+		<div class="p-2 flex-column" style="margin-top: 20px; margin-left: auto; margin-right: 30px;">
+			<p> <strong>Price : </strong> $<%= hotel.price %></p>
+			<%= form_tag(images_deleteHotels_path(:location => @location), multipart: true) do %>
+			<div class="form-group "><%= submit_tag "Book" , class: "templatemo-blue-button width-100"%></div>
+			<% end %>
+		</div>
+	</div>
+
+	<%end%>
+</div>
+
