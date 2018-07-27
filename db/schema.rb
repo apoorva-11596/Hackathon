@@ -11,17 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180727015742) do
+ActiveRecord::Schema.define(version: 20180727060825) do
 
   create_table "hotels", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.string   "address",    null: false
-    t.string   "location",   null: false
-    t.integer  "price",      null: false
-    t.float    "rating",     null: false
-    t.float    "distance",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",        null: false
+    t.string   "address",     null: false
+    t.string   "location",    null: false
+    t.integer  "price",       null: false
+    t.float    "rating",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "imageurl"
+    t.string   "description"
   end
 
 end

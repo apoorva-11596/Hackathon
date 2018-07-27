@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'images/description/:location/:latitude/:longitude' => "images#description", as: "image_description"
 
-  get 'images/hotels/:location' => "images#hotels"
+  get 'images/hotels/:location' => "images#hotels", as: "image_hotels"
 
   post 'images/searchhotels' => "images#searchHotels"
 

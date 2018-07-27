@@ -9,21 +9,23 @@ class ImagesController < ApplicationController
   end
 
   def searchHotels
-  	 response = RestClient.post 'http://172.26.71.139:8080/api/getDetails', {"location" => params[:location], "latitude" => params[:latitude].to_f, "longitude" => params[:longitude].to_f, "imageb64" => "dwefgrhtrgthy"}.to_json,{content_type: :json, accept: :json}
+  	 response = RestClient.post 'http://4e9dc351.ngrok.io/api/getDetails', {"location" => params[:location], "latitude" => params[:latitude].to_f, "longitude" => params[:longitude].to_f, "imageb64" => "dwefgrhtrgthy"}.to_json,{content_type: :json, accept: :json}
   	 parse_response = JSON.parse(response)
-  	 #byebug
+  	 
   	 parse_response.each do |res|
   		h = Hotel.new()
   	 	h.name = res["name"]
   	 	h.address = res["address"]
   	 	h.price = res["price"]
   	 	h.rating = res["rating"]
-  	 	h.distance = res["distance"]
+  	 	h.imageurl = res["imageUrl"]
+      h.description = res["description"]
   	 	h.location = params["location"]
 
   	 	h.save
   	 end
 
+     #byebug
   	 redirect_to action: "hotels" , location: params[:location]
   end
 

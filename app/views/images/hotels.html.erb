@@ -2,12 +2,13 @@
 	<% @hotels.each do |hotel|%>
 
 	<div class="p-2 d-flex flex-row templatemo-content-widget">
+		<div class="p-2" style="margin-top: 20px;"><%= image_tag hotel.imageurl %></div>
 		<div class="p-2 flex-column" style="width: 50%;">
 			<ul class="p-2">
 				<li> <strong>Name : </strong> <%= hotel.name %></li>
 				<li> <strong>Address :</strong> <%= hotel.address %></li>
 				<li> <strong>Rating :</strong> <%= hotel.rating %></li>
-				<li> <strong>Distance:</strong> <%= hotel.distance %></li>
+				<li> <strong>Description:</strong> <%= hotel.description %></li>
 			</ul>
 		</div>
 
